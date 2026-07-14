@@ -1,0 +1,306 @@
+/* ========================================================
+   Maranda Breese — Portfolio Site
+   ======================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Permanent+Marker&family=Nunito:wght@400;500;600;700&display=swap');
+
+:root {
+  --pink: #FF7FB0;
+  --orange: #F4A876;
+  --yellow: #F5E152;
+  --ink: #201F1D;
+  --gray: #9B9B9B;
+  --gray-light: #E4E4E4;
+  --white: #FFFFFF;
+  --cream: #FFFDFB;
+  --teal: #1F4E52;
+  --max-width: 1440px;
+  --side-pad: clamp(24px, 6vw, 100px);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+}
+
+/* ---------- Header / Nav ---------- */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px var(--side-pad) 20px;
+  position: relative;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--ink);
+}
+
+.logo .bee { font-size: 1.5rem; line-height: 1; }
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.main-nav a {
+  padding: 6px 2px;
+  transition: color .15s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--pink);
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown > button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 2px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-dropdown > button:hover { color: var(--pink); }
+
+.nav-dropdown .caret {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -4px;
+  transition: transform .15s ease;
+}
+
+.nav-dropdown.open .caret { transform: rotate(-135deg); margin-top: 2px; }
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+  min-width: 180px;
+  background: var(--white);
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+
+.nav-dropdown.open .dropdown-menu { display: flex; }
+
+.dropdown-menu a {
+  padding: 14px 20px;
+  border: 2px solid var(--yellow);
+  margin-top: -2px;
+  color: var(--gray);
+  font-weight: 600;
+  text-align: center;
+  background: var(--white);
+}
+
+.dropdown-menu a:first-child { margin-top: 0; }
+
+.dropdown-menu a:hover,
+.dropdown-menu a.active {
+  color: var(--ink);
+  background: #FFFDF0;
+}
+
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.mobile-toggle span {
+  width: 26px;
+  height: 3px;
+  background: var(--ink);
+  border-radius: 2px;
+}
+
+/* ---------- Divider bars ---------- */
+
+.bar {
+  height: 14px;
+  width: 100%;
+}
+.bar-pink { background: var(--pink); }
+.bar-orange { background: var(--orange); }
+
+.bar-inset {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.bar-right {
+  margin-left: auto;
+  width: 52%;
+}
+.bar-left {
+  margin-right: auto;
+  width: 50%;
+}
+
+/* ---------- Headline treatment ---------- */
+
+.headline {
+  font-family: 'Permanent Marker', cursive;
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--ink);
+  letter-spacing: 0.5px;
+}
+
+.page-title {
+  font-size: clamp(3.5rem, 9vw, 6.5rem);
+  margin: 40px 0 50px;
+}
+
+.hero-title {
+  font-size: clamp(3.2rem, 8vw, 6rem);
+  margin: 30px 0 0;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-block;
+  border: 2px solid var(--yellow);
+  padding: 14px 28px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 2px;
+  transition: background .15s ease;
+  background: var(--white);
+}
+.btn:hover { background: #FFFBE8; }
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  margin-top: 100px;
+}
+
+.footer-nav {
+  padding: 60px var(--side-pad) 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.footer-nav .primary-links {
+  display: flex;
+  gap: 60px;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.footer-nav .sub-links {
+  display: flex;
+  gap: 60px;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.footer-nav .sub-links a:hover { color: var(--pink); }
+.footer-nav .primary-links a:hover { color: var(--pink); }
+
+.footer-bee {
+  font-size: 1.8rem;
+  margin-top: 10px;
+}
+
+.footer-copy {
+  text-align: center;
+  color: var(--gray);
+  font-size: .85rem;
+  padding: 6px 0 40px;
+}
+
+/* ---------- Utility ---------- */
+
+.section {
+  padding: 60px 0;
+}
+
+.placeholder-photo {
+  background: repeating-linear-gradient(45deg, #F4F4F4, #F4F4F4 10px, #ECECEC 10px, #ECECEC 20px);
+  border: 2px dashed #C9C9C9;
+  color: #9B9B9B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  font-size: .95rem;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+@media (max-width: 860px) {
+  .main-nav { display: none; }
+  .mobile-toggle { display: flex; }
+  .main-nav.mobile-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    padding: 20px var(--side-pad) 30px;
+    gap: 18px;
+    box-shadow: 0 12px 20px rgba(0,0,0,.06);
+  }
+  .nav-dropdown .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    display: none;
+    margin-top: 10px;
+  }
+  .nav-dropdown.open .dropdown-menu { display: flex; }
+  .footer-nav .primary-links,
+  .footer-nav .sub-links { gap: 30px; flex-wrap: wrap; justify-content: center; }
+}
