@@ -5,9 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Unkempt:wght@400;700&display=swap');
 
 :root {
-  --pink: #FF7FB0;
-  --orange: #F4A876;
-  --yellow: #F5E152;
+  --pink: #FF9EBE;
+  --orange: #FFB47F;
+  --yellow: #FFE571;
   --ink: #201F1D;
   --gray: #9B9B9B;
   --gray-light: #E4E4E4;
@@ -46,7 +46,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 28px var(--side-pad) 20px;
+  padding: 40px var(--side-pad) 35px;
   position: relative;
   z-index: 100;
 }
@@ -78,7 +78,7 @@ a { color: inherit; text-decoration: none; }
 
 .main-nav a:hover,
 .main-nav a.active {
-  color: var(--pink);
+  text-decoration: underline var(--yellow) 3px;
 }
 
 .nav-dropdown {
@@ -98,7 +98,7 @@ a { color: inherit; text-decoration: none; }
   gap: 6px;
 }
 
-.nav-dropdown > button:hover { color: var(--pink); }
+.nav-dropdown > button:hover { text-decoration: underline var(--yellow) 3px;}
 
 .nav-dropdown .caret {
   width: 8px;
@@ -125,6 +125,11 @@ a { color: inherit; text-decoration: none; }
 
 .nav-dropdown.open .dropdown-menu { display: flex; }
 
+@media (min-width: 861px) {
+  .nav-dropdown:hover .dropdown-menu { display: flex; }
+  .nav-dropdown:hover .caret { transform: rotate(-135deg); margin-top: 2px; }
+}
+
 .dropdown-menu a {
   padding: 14px 20px;
   border: 2px solid var(--yellow);
@@ -140,7 +145,7 @@ a { color: inherit; text-decoration: none; }
 .dropdown-menu a:hover,
 .dropdown-menu a.active {
   color: var(--ink);
-  background: #FFFDF0;
+  background: var(--yellow);
 }
 
 .mobile-toggle {
@@ -168,17 +173,13 @@ a { color: inherit; text-decoration: none; }
 .bar-pink { background: var(--pink); }
 .bar-orange { background: var(--orange); }
 
-.bar-inset {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
 .bar-right {
   margin-left: auto;
-  width: 52%;
+  width: 45%;
 }
 .bar-left {
   margin-right: auto;
-  width: 50%;
+  width: 45%;
 }
 
 /* ---------- Headline treatment ---------- */
@@ -229,6 +230,7 @@ a { color: inherit; text-decoration: none; }
 .hero-content {
   position: relative;
   z-index: 2;
+  margin-top: 4%;
 }
 
 /* ---------- Buttons ---------- */
@@ -239,12 +241,18 @@ a { color: inherit; text-decoration: none; }
   padding: 14px 28px;
   font-weight: 600;
   font-size: 1rem;
-  border-radius: 2px;
+  border-radius: 13px;
   transition: background .15s ease;
   background: var(--white);
 }
-.btn:hover { background: #FFFBE8; }
+.btn:hover { 
+  background: var(--yellow); }
 
+.link-header {
+  margin:14px 0 18px; 
+  font-size: 28px; 
+  font-weight: 300;
+}
 /* ---------- Footer ---------- */
 
 .site-footer {
@@ -274,8 +282,8 @@ a { color: inherit; text-decoration: none; }
   font-weight: 600;
 }
 
-.footer-nav .sub-links a:hover { color: var(--pink); }
-.footer-nav .primary-links a:hover { color: var(--pink); }
+.footer-nav .sub-links a:hover { text-decoration: underline var(--yellow) 3px;}
+.footer-nav .primary-links a:hover { text-decoration: underline var(--yellow) 3px;}
 
 .footer-bee {
   font-size: 1.8rem;
