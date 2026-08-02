@@ -296,6 +296,14 @@ a { color: inherit; text-decoration: none; }
   font-size: .85rem;
   padding: 6px 0 40px;
 }
+/* ---------- Video ---------- */
+
+.video-decoration {
+  height:4px; 
+  width:50%; 
+  background:var(--yellow);
+}
+
 
 /* ---------- Utility ---------- */
 
