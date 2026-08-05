@@ -256,7 +256,7 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Footer ---------- */
 
 .site-footer {
-  margin-top: 100px;
+  margin-top: 10px;
 }
 
 .footer-nav {
@@ -304,6 +304,34 @@ a { color: inherit; text-decoration: none; }
   background:var(--yellow);
 }
 
+.video-grid {
+  display:grid; 
+  grid-template-columns:1fr 1fr; 
+  gap:50px 40px;
+}
+
+#customervideos {
+  grid-template-columns:1fr 1fr 1fr; 
+}
+
+/* ---------- Graphics Page ---------- */
+
+.gallery {
+  width:100%; 
+  object-fit:cover; 
+}
+
+.gallery .pink {
+  box-shadow:8px 8px 0 var(--pink);
+}
+
+.gallery .orange {
+  box-shadow:8px 8px 0 var(--orange);
+}
+
+.gallery .yellow {
+  box-shadow:8px 8px 0 var(--yellow);
+}
 
 /* ---------- Utility ---------- */
 
@@ -349,4 +377,5 @@ a { color: inherit; text-decoration: none; }
   .nav-dropdown.open .dropdown-menu { display: flex; }
   .footer-nav .primary-links,
   .footer-nav .sub-links { gap: 30px; flex-wrap: wrap; justify-content: center; }
+  .video-grid { grid-template-columns: 1fr !important; }
 }
