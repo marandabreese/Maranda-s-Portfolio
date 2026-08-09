@@ -331,6 +331,12 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Graphics Page ---------- */
 
+.gallery-grid {
+  display:grid; 
+  grid-template-columns:repeat(5,1fr); 
+  gap:36px;
+}
+
 .gallery {
   width:100%; 
   object-fit:cover; 
@@ -396,6 +402,40 @@ a { color: inherit; text-decoration: none; }
   padding: 60px 0;
 }
 
+.home-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.home-row-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.thumb-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 50px;
+}
+
 .placeholder-photo {
   background: repeating-linear-gradient(45deg, #F4F4F4, #F4F4F4 10px, #ECECEC 10px, #ECECEC 20px);
   border: 2px dashed #C9C9C9;
@@ -432,7 +472,60 @@ a { color: inherit; text-decoration: none; }
     margin-top: 10px;
   }
   .nav-dropdown.open .dropdown-menu { display: flex; }
+  .dropdown-menu a {
+    border: none;
+    margin-top: 0;
+    padding: 10px 4px;
+    text-align: center;
+  }
   .footer-nav .primary-links,
   .footer-nav .sub-links { gap: 30px; flex-wrap: wrap; justify-content: center; }
   .video-grid { grid-template-columns: 1fr !important; }
+  .home-row,
+  .home-row-3 {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .home-row .btn {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home-row img {
+    order: -1;
+  }
+  .section.hero-section {
+    aspect-ratio: auto;
+    padding: 40px 0;
+  }
+  .hero-title {
+    font-size: clamp(2.5rem, 14vw, 4.5rem);
+    margin-top: 16px;
+  }
+  .hero-content {
+    margin-top: 0;
+  }
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-hero img {
+    order: -1;
+  }
+  .about-photos {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .thumb-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 30px;
+  }
+
+  .gallery-grid {
+    grid-template-columns:repeat(3,1fr); 
+    gap:20px;
+  }
 }
